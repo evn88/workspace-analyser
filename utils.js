@@ -8,7 +8,7 @@
  *
  * @return Formatted string.
  */
-export const humanFileSize = (bytes, si = false, dp = 1) => {
+const humanFileSize = (bytes, si = false, dp = 1) => {
   const thresh = si ? 1000 : 1024;
 
   if (Math.abs(bytes) < thresh) {
@@ -31,3 +31,4 @@ export const humanFileSize = (bytes, si = false, dp = 1) => {
 
   return bytes.toFixed(dp) + " " + units[u];
 };
+export default humanFileSize;

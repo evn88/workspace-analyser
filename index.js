@@ -3,7 +3,7 @@ import os from "os";
 import path from "path";
 import ObjectsToCsv from "objects-to-csv";
 import dotenv from "dotenv";
-import { humanFileSize } from "./utils";
+import humanFileSize from "./utils.js";
 
 // ---- Settings ---- //
 dotenv.config();
@@ -15,19 +15,19 @@ if (process.env.APPEND_HOME_PATH === "true") {
 }
 
 const excludeFolders = ["node_modules", ".git"];
-const includeExtensions = [".js", ".jsx", ".ts", ".tsx", ".css"];
+const includeExtensions = [".js", ".jsx", ".ts", ".tsx", ".css", ".json"];
 const excludeFiles = [".DS_Store"];
 const hidePathString = process.env.HIDE_PATH_STRING;
 // ---- Settings ---- //
 
 // Scan folders
 const getAllFiles = function (dirPath) {
-  var results = [];
-  var list = fs.readdirSync(dirPath);
+  let results = [];
+  const list = fs.readdirSync(dirPath);
   list.forEach(function (file) {
     if (!excludeFolders.includes(file) && !excludeFiles.includes(file)) {
       file = dirPath + "/" + file;
-      var stat = fs.statSync(file);
+      const stat = fs.statSync(file);
 
       if (stat && stat.isDirectory()) {
         /* Recurse into a subdirectory */
