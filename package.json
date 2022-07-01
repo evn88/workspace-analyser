@@ -1,0 +1,13 @@
+{
+  "name": "workspace-analyser",
+  "version": "1.0.0",
+  "description": "Analyzing the size of files in the specified directory",
+  "main": "index.js",
+  "repository": "https://github.com/evn88/workspace-analyser.git",
+  "author": "Egor Vershkov <evn88fx64@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
